@@ -22,7 +22,7 @@
 		justify-content: space-between;
 	}
 
-	&__title h1{
+	&__title h1 {
 		color: #FFFFFF;
 		font-size: 38px;
 		font-weight: 700;
@@ -41,10 +41,10 @@
 		align-items: center;
 		justify-content: center;
 		cursor: pointer;
-		transition:  all 0.1s;
+		transition: all 0.1s;
 
 		&:hover {
-			 opacity: 0.6;
+			opacity: 0.6;
 		}
 	}
 
@@ -76,7 +76,7 @@
 		align-items: center;
 		position: relative;
 
-		&:hover > .todo__delete-btn {
+		&:hover>.todo__delete-btn {
 			display: block;
 		}
 	}
@@ -86,17 +86,19 @@
 		position: absolute;
 
 		&:checked {
-			& ~ .todo__false-check {
+			&~.todo__false-check {
 				background: linear-gradient(135deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
 
-				&:before {background: transparent}
+				&:before {
+					background: transparent
+				}
 			}
 
-			& ~ .todo__false-check > svg {
+			&~.todo__false-check>svg {
 				display: block;
 			}
-			
-			& ~ .todo__text {
+
+			&~.todo__text {
 				color: #D2D1D6;
 				text-decoration: line-through;
 			}
@@ -120,21 +122,22 @@
 			width: 20px;
 			height: 20px;
 
-			& > svg {
+			&>svg {
 				width: 8px;
 				height: 8px;
 			}
 		}
 
-		& > svg {
+		&>svg {
 			width: 10px;
 			display: none;
 		}
 
 		&:hover {
-			background: linear-gradient(135deg, #57ddff,#c058f3);
+			background: linear-gradient(135deg, #57ddff, #c058f3);
+
 			&:before {
-				content:  "";
+				content: "";
 				position: absolute;
 				top: 1px;
 				right: 1px;
@@ -159,6 +162,7 @@
 		@media (max-width: 500px) {
 			padding: 0 15px;
 		}
+
 		@media (max-width: 460px) {
 			font-size: 14px;
 			padding: 0 5px;
@@ -168,15 +172,15 @@
 			color: transparent;
 		}
 
-		&:focus::-moz-placeholder          {
+		&:focus::-moz-placeholder {
 			color: transparent;
 		}
 
-		&:focus:-moz-placeholder           {
+		&:focus:-moz-placeholder {
 			color: transparent;
 		}
 
-		&:focus:-ms-input-placeholder      {
+		&:focus:-ms-input-placeholder {
 			color: transparent;
 		}
 	}
@@ -184,26 +188,28 @@
 	&__control {
 		display: flex;
 		align-items: flex-start;
+		flex-wrap: wrap;
 		justify-content: space-between;
 		color: #96959B;
 		padding: 20px 25px;
+		gap: 16px 10px;
 	}
 
-	&__control-false {
-		display: none;
-		align-items: flex-start;
-		justify-content: center;
-		color: #96959B;
-		padding: 20px 25px;
-		background: #FFFFFF;
-		box-shadow: 0px 3px 10px 0px rgba(34, 60, 80, 0.09);
-		border-radius: 5px;
-		margin-top: 25px;
+	// &__control-false {
+	// 	display: none;
+	// 	align-items: flex-start;
+	// 	justify-content: center;
+	// 	color: #96959B;
+	// 	padding: 20px 25px;
+	// 	background: #FFFFFF;
+	// 	box-shadow: 0px 3px 10px 0px rgba(34, 60, 80, 0.09);
+	// 	border-radius: 5px;
+	// 	margin-top: 25px;
 
-		@media (max-width: 460px) {
-			display: flex;
-		}
-	}
+	// 	@media (max-width: 460px) {
+	// 		display: flex;
+	// 	}
+	// }
 
 	&__foot {
 		display: flex;
@@ -242,10 +248,12 @@
 			& .todo__false-check {
 				background: linear-gradient(135deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
 
-				&:before {background: transparent}
+				&:before {
+					background: transparent
+				}
 			}
 
-			& .todo__false-check > svg {
+			& .todo__false-check>svg {
 				display: block;
 			}
 
@@ -283,7 +291,7 @@
 		display: none;
 		transition: all 0.1s;
 
-		& > svg {
+		&>svg {
 			z-index: -1;
 
 			@media (max-width: 460px) {
@@ -292,25 +300,28 @@
 		}
 
 		&:hover {
-			& > svg path {
+			&>svg path {
 				transition: all 0.1s;
 				fill: #CCCFE2;
 			}
 		}
 	}
 
-	&__sort {
-		 display: flex;
-		 align-items: center;
+	&__filter {
+		display: flex;
+		align-items: center;
 
-		 @media (max-width: 460px) {
-			 display: none;
-			 flex-direction: column;
-			 row-gap: 5px;
-		 }
+		@media (max-width: 460px) {
+			order: 3;
+			margin-left: auto;
+			margin-right: auto;
+			width: 100%;
+			justify-content: center;
+			gap: 1rem;
+		}
 	}
 
-	&__sort-false {
+	&__filter-false {
 		display: flex;
 		align-items: center;
 
@@ -332,7 +343,7 @@
 	color: #97969B;
 	cursor: pointer;
 	transition: all 0.1s;
-	font-family:$mainFont;
+	font-family: $mainFont;
 	font-size: 14px;
 
 	@media (max-width: 460px) {
