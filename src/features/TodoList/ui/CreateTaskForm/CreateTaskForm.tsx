@@ -8,28 +8,22 @@ export const CreateTaskForm = React.memo(() => {
 	const [value, setValue] = useState("");
 	const [checked, setChecked] = useState(false);
 
-	const onKeyPress = useCallback(
-		(e: FormEvent<HTMLFormElement>) => {
-			e.preventDefault();
-			setValue("");
-			setChecked(false);
-			if (value.trim()) {
-				dispatch(addTask({ checked, text: value }));
-			}
-		},
-		[dispatch]
-	);
+	const onKeyPress = (e: FormEvent<HTMLFormElement>) => {
+		e.preventDefault();
+		setValue("");
+		setChecked(false);
+		if (value.trim()) {
+			dispatch(addTask({ checked, text: value }));
+		}
+	};
 
-	const checkboxHandler = useCallback(() => {
+	const checkboxHandler = () => {
 		setChecked(!checked);
-	}, [dispatch]);
+	};
 
-	const inputHandler = useCallback(
-		(e: React.ChangeEvent<HTMLInputElement>) => {
-			setValue(e.target.value);
-		},
-		[dispatch]
-	);
+	const inputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+		setValue(e.target.value);
+	};
 
 	return (
 		<form
